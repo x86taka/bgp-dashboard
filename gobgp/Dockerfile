@@ -1,5 +1,5 @@
 # FROM osrg/gobgp:latest
-FROM ubuntu:17.10
+FROM ubuntu:18.04
 
 RUN apt-get update
 RUN apt-get remove -y binutils
@@ -8,8 +8,8 @@ RUN apt-get install -y python3-pip
 RUN apt-get install -y wget
 COPY ./requirements.txt /tmp/requirements.txt
 RUN pip3 install -r /tmp/requirements.txt
-RUN wget https://github.com/osrg/gobgp/releases/download/v1.32/gobgp_1.32_linux_amd64.tar.gz
-RUN tar -xzvf gobgp_1.32_linux_amd64.tar.gz
+RUN wget https://github.com/osrg/gobgp/releases/download/v2.13.0/gobgp_2.13.0_linux_amd64.tar.gz
+RUN tar -xzvf gobgp_2.13.0_linux_amd64.tar.gz
 RUN mkdir /root/gobgp
 RUN mv gobgp /root/gobgp/gobgp
 RUN mv gobgpd /root/gobgp/gobgpd
